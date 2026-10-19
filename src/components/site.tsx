@@ -33,6 +33,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", f);
   }, []);
   return (
+    <>
     <header className={`sticky top-0 z-40 transition-all ${scrolled ? "bg-background/95 shadow-soft backdrop-blur" : "bg-background"}`}>
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 md:flex md:justify-between">
         <Logo />
@@ -60,8 +61,9 @@ export function Header() {
           <Link to="/" hash="ebook" onClick={() => setOpen(false)} className="btn-primary mt-4 w-full">Découvrir l'e-book</Link>
         </nav>
       )}
-      <CartDrawer />
     </header>
+    <CartDrawer />
+    </>
   );
 }
 
